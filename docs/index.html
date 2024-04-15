@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>chatwidgetsdk</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="index.html">
+                    <span>chatwidgetsdk</span>
+            </a>
+    </div>
+    <div>
+    </div>
+    <div class="pull-right d-flex">
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" id="content" pageIds="chatwidgetsdk::////PointingToDeclaration//-91166018">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>chatwidgetsdk</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":chatwidgetsdk:dokkaHtml/release"><h1 class=""><code class="lang-kotlin">`DGChatSDK`</code></h1><p class="paragraph">Android SDK for DigitalGenius Chat.</p><h2 class=""> Overview</h2><p class="paragraph">This SDK enables the DigitalGenius Chat Widget to be embedded anywhere inside an Android app.  The SDK requires minimal setup. Please see the <code class="lang-kotlin">PublicDemoApp.zip</code> for an example.</p><p class="paragraph">A DigitalGenius Customer Success Manager will provide you with a custom <code class="lang-kotlin">widgetId</code>, <code class="lang-kotlin">env</code> and <code class="lang-kotlin">version</code> before getting started.  Please see the <code class="lang-kotlin">Integrating SDK to your project</code> section for details on how to integrate the following settings into an Android app using the SDK.</p><h2 class=""> Installation</h2><ol><li><p class="paragraph">Extract the provided <code class="lang-kotlin">chatwidgetsdk</code> zip.</p></li><li><p class="paragraph">Add to your build gradle file:</p><div class="sample-container"><pre><code class="block lang-groovy" theme="idea"> dependencies {<br>     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')<br> }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">Put <code class="lang-kotlin">DGChatSDK.aar</code> into your <code class="lang-kotlin">project/module/libs</code> folder.</p></li><li><p class="paragraph">Click <code class="lang-kotlin">Sync Project with Gradle files</code> in Android Studio</p></li></ol><h2 class=""> Basic usage example</h2><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">class MainActivity : ComponentActivity() {<br>    override fun onCreate(savedInstanceState: Bundle?) {<br>        super.onCreate(savedInstanceState)<br>        DGChatSdk.init(<br>            widgetId = &quot;your_widget_id&quot;,<br>            env = &quot;your_env&quot;,<br>            version = &quot;your_version&quot;,<br>            useCache = true,<br>            crmPlatform = &quot;your_crm&quot;, // optional<br>            crmVersion = &quot;your_crm_version&quot;, // optional<br>            callbacks = object : IDGChatWidgetListener {<br>                override fun onChatMinimizeClick() {<br>                    Toast.makeText(<br>                        this@MainActivity,<br>                        &quot;User callback -&gt; onChatMinimizeClick&quot;,<br>                        Toast.LENGTH_LONG<br>                    ).show()<br>                }<br><br>                override fun onChatEndClick() {<br>                    Toast.makeText(<br>                        this@MainActivity,<br>                        &quot;User callback -&gt; onChatEndClick&quot;,<br>                        Toast.LENGTH_LONG<br>                    ).show()<br>                }<br><br>                override fun onChatLauncherClick() {<br>                    Toast.makeText(<br>                        this@MainActivity,<br>                        &quot;User callback -&gt; onChatLauncherClick&quot;,<br>                        Toast.LENGTH_LONG<br>                    ).show()<br>                }<br><br>                override fun onChatProactiveButtonClick() {<br>                    Toast.makeText(<br>                        this@MainActivity,<br>                        &quot;User callback -&gt; onChatProactiveButtonClick&quot;,<br>                        Toast.LENGTH_LONG<br>                    ).show()<br>                }<br><br>                override fun onCSATPopoverCloseClicked() {<br>                    Toast.makeText(<br>                        this@MainActivity,<br>                        &quot;User callback -&gt; onCSATPopoverCloseClicked&quot;,<br>                        Toast.LENGTH_LONG<br>                    ).show()<br>                }<br>            },<br>            metadata = &quot;&quot;&quot;<br>                metadata: {<br>                    &quot;currentPage&quot;: &quot;some-random-string&quot;,<br>                    &quot;currentPageTitle&quot;: &quot;another-random-string&quot;<br>                }<br>            &quot;&quot;&quot;.trimIndent()<br>        )<br>        attachDGChatViewToLifecycle()<br><br>        /*<br>            ....<br>         */<br><br>       val methods = showDGChatView()<br>       methods.minimizeWidget()<br>       methods.sendMessage(&quot;your message&quot;)<br>       methods.launchWidget()<br>       methods.initProactiveButtons(<br>          listOf(&quot;question1&quot;, &quot;question2&quot;, &quot;question3&quot;),<br>          listOf(&quot;answer1&quot;, &quot;answer2&quot;, &quot;answer3&quot;)<br>       )<br>    }<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">⚠️ It is highly important to provide <code class="lang-kotlin">`version`</code> as a <a href="https://en.wikipedia.org/wiki/Software_versioning">Semantic versioning three-part version number</a>. Otherwise, you'll encounter runtime error. And finally, just call <code class="lang-kotlin">`showDGChatViewWith(animator: DGChatViewAnimator)`</code> to present a chat button on top of specified Activity with animation or <code class="lang-kotlin">`showDGChatView()`</code> without.</p><p class="paragraph">Methods <code class="lang-kotlin">`showDGChatViewWith(animator: DGChatViewAnimator)`</code> and <code class="lang-kotlin">`showDGChatView()`</code> returned <code class="lang-kotlin">`DGChatMethods`</code> which can be used to performed programmatically widget actions</p><h2 class=""> Sample project</h2><p class="paragraph">The interaction model and example usage can be found in Demo project. Refer to the <code class="lang-kotlin">MainActivity.kt</code> file.</p><h1 class=""> React-native</h1><h2 class=""> Installation</h2><ol><li><p class="paragraph">Extract the provided <code class="lang-kotlin">chatwidgetsdk</code> zip.</p></li><li><p class="paragraph">Add to your build gradle file:</p><div class="sample-container"><pre><code class="block lang-groovy" theme="idea"> dependencies {<br>     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')<br>     implementation(platform(&quot;org.jetbrains.kotlin:kotlin-bom:1.8.0&quot;))<br>     implementation(&quot;androidx.compose.runtime:runtime:1.4.3&quot;)<br> }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></li><li><p class="paragraph">Put <code class="lang-kotlin">DGChatSDK.aar</code> into your <code class="lang-kotlin">project/android/app/libs</code> folder.</p></li><li><p class="paragraph">Click <code class="lang-kotlin">Sync Project with Gradle files</code> in Android Studio</p></li></ol><h2 class=""> Basic usage example</h2><p class="paragraph">Add to your react-native application class:</p><div class="sample-container"><pre><code class="block lang-java" theme="idea">public class MainApplication extends Application implements ReactApplication {<br>        ...<br>        @Override<br>        protected List&lt;ReactPackage&gt; getPackages() {<br>          @SuppressWarnings(&quot;UnnecessaryLocalVariable&quot;)<br>          List&lt;ReactPackage&gt; packages = new PackageList(this).getPackages();<br>          // Packages that cannot be autolinked yet can be added manually here, for example:<br>           packages.add(new DGChatSdkPackage());<br>          return packages;<br>        }<br>         ...</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Add to your react-native activity class:</p><div class="sample-container"><pre><code class="block lang-java" theme="idea">    @Override<br>    protected void onCreate(Bundle savedInstanceState) {<br>        super.onCreate(savedInstanceState);<br>        DGChatSdkModule.Companion.initDgChatSdkModule(this);<br>    }</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">Add to your react-native App.tsx:</p><div class="sample-container"><pre><code class="block lang-javascript" theme="idea">import {useEffect, useState} from 'react';<br>import {NativeEventEmitter, NativeModules} from 'react-native';<br>const {DGChatModule} = NativeModules;<br><br>...<br>useEffect(() =&gt; {<br>    const eventEmitter = new NativeEventEmitter(NativeModules.DGChatModule);<br>    let onChatMinimizeClickEventListener = eventEmitter.addListener('OnChatMinimizeClick', event =&gt; {<br>      DGChatModule.showToast(&quot;OnChatMinimizeClick&quot;)<br>    });<br>    let onChatEndClickEventListener = eventEmitter.addListener('onChatEndClick', event =&gt; {<br>      DGChatModule.showToast(&quot;onChatEndClick&quot;)<br>    });<br>    let onChatLauncherClickEventListener = eventEmitter.addListener('onChatLauncherClick', event =&gt; {<br>      DGChatModule.showToast(&quot;onChatLauncherClick&quot;)<br>    });<br>    let onChatProactiveButtonClickEventListener = eventEmitter.addListener('onChatProactiveButtonClick', event =&gt; {<br>      DGChatModule.showToast(&quot;onChatProactiveButtonClick&quot;)<br>    });<br>    let onCSATPopoverCloseClickedEventListener = eventEmitter.addListener('onCSATPopoverCloseClicked', event =&gt; {<br>      DGChatModule.showToast(&quot;onCSATPopoverCloseClicked&quot;)<br>    });<br><br><br>    return () =&gt; {<br>      onChatMinimizeClickEventListener.remove(); <br>	  onChatEndClickEventListener.remove(); <br>	  onChatLauncherClickEventListener.remove(); <br>	  onChatProactiveButtonClickEventListener.remove();<br>	  onCSATPopoverCloseClickedEventListener.remove();<br>    };<br>  }, []<br>);<br>...<br>    DGChatModule.showDGChatView(<br>       &quot;your_widget_id&quot;,<br>       &quot;your_env&quot;,<br>       &quot;your_version&quot;,<br>       true, <br>       crmPlatform, // optional<br>       crmVersion, // optional<br>       &quot;metadata: { \&quot;currentPage\&quot;: \&quot;some-random-string\&quot;, \&quot;currentPageTitle\&quot;: \&quot;another-random-string\&quot;}&quot;<br>    );<br>...<br><br>       DGChatModule.sendMessage(&quot;your message&quot;)<br>       DGChatModule.launchWidget()<br>       DGChatModule.initProactiveButtons(<br>          [&quot;question1&quot;, &quot;question2&quot;, &quot;question3&quot;],<br>          [&quot;answer1&quot;, &quot;answer2&quot;, &quot;answer3&quot;]<br>       )<br>...</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h2 class=""> Sample project</h2><p class="paragraph">The interaction model and example usage can be found in Demo project.</p></div></div>
+  </div>
+  <h2 class="">Packages</h2>
+  <div class="table"><a data-name="1612730996%2FPackages%2F-91166018" anchor-label="com.digitalgenius.chatwidgetsdk" id="1612730996%2FPackages%2F-91166018" data-filterable-set=":chatwidgetsdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":chatwidgetsdk:dokkaHtml/release" data-filterable-set=":chatwidgetsdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="chatwidgetsdk/com.digitalgenius.chatwidgetsdk/index.html">com.digitalgenius.chatwidgetsdk</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1612730996%2FPackages%2F-91166018"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1645722905%2FPackages%2F-91166018" anchor-label="com.digitalgenius.chatwidgetsdk.ext" id="-1645722905%2FPackages%2F-91166018" data-filterable-set=":chatwidgetsdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":chatwidgetsdk:dokkaHtml/release" data-filterable-set=":chatwidgetsdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ext/index.html">com.digitalgenius.chatwidgetsdk.ext</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1645722905%2FPackages%2F-91166018"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1860147297%2FPackages%2F-91166018" anchor-label="com.digitalgenius.chatwidgetsdk.interactions" id="-1860147297%2FPackages%2F-91166018" data-filterable-set=":chatwidgetsdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":chatwidgetsdk:dokkaHtml/release" data-filterable-set=":chatwidgetsdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/index.html">com.digitalgenius.chatwidgetsdk.interactions</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1860147297%2FPackages%2F-91166018"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1035288635%2FPackages%2F-91166018" anchor-label="com.digitalgenius.chatwidgetsdk.react" id="-1035288635%2FPackages%2F-91166018" data-filterable-set=":chatwidgetsdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":chatwidgetsdk:dokkaHtml/release" data-filterable-set=":chatwidgetsdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/index.html">com.digitalgenius.chatwidgetsdk.react</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1035288635%2FPackages%2F-91166018"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1918899502%2FPackages%2F-91166018" anchor-label="com.digitalgenius.chatwidgetsdk.ui" id="-1918899502%2FPackages%2F-91166018" data-filterable-set=":chatwidgetsdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":chatwidgetsdk:dokkaHtml/release" data-filterable-set=":chatwidgetsdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/index.html">com.digitalgenius.chatwidgetsdk.ui</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1918899502%2FPackages%2F-91166018"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+<a data-name="-1876691082%2FPackages%2F-91166018" anchor-label="com.digitalgenius.chatwidgetsdk.ui.compose" id="-1876691082%2FPackages%2F-91166018" data-filterable-set=":chatwidgetsdk:dokkaHtml/release"></a>
+    <div class="table-row" data-filterable-current=":chatwidgetsdk:dokkaHtml/release" data-filterable-set=":chatwidgetsdk:dokkaHtml/release">
+      <div>
+        <div class="main-subrow ">
+          <div class=""><span class="inline-flex">
+              <div><a href="chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui.compose/index.html">com.digitalgenius.chatwidgetsdk.ui.compose</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1876691082%2FPackages%2F-91166018"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div class="pull-right"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

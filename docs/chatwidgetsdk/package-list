@@ -1,0 +1,72 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ext////PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ext/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ext//attachDGChatViewToLifecycle/androidx.lifecycle.LifecycleOwner#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ext/attach-d-g-chat-view-to-lifecycle.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions////PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultAnimator///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-animator/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultAnimator/DGChatDefaultAnimator/#kotlin.Long#kotlin.Function1[android.view.View,kotlin.Unit]?#kotlin.Function2[android.view.View,kotlin.Float,kotlin.Unit]#kotlin.Function1[android.view.View,kotlin.Unit]?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-animator/-d-g-chat-default-animator.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultAnimator/animLength/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-animator/anim-length.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultAnimator/onAnimate/#android.view.View#kotlin.Float/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-animator/on-animate.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultAnimator/onAnimationFinished/#android.view.View/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-animator/on-animation-finished.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultAnimator/onAnimationStarted/#android.view.View/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-animator/on-animation-started.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultFadeAnimator///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-fade-animator/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatDefaultFadeAnimator/DGChatDefaultFadeAnimator/#kotlin.Long/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-default-fade-animator/-d-g-chat-default-fade-animator.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatMethods///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-methods/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatMethods/initProactiveButtons/#kotlin.collections.List[kotlin.String]#kotlin.collections.List[kotlin.String]/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-methods/init-proactive-buttons.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatMethods/launchWidget/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-methods/launch-widget.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatMethods/minimizeWidget/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-methods/minimize-widget.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatMethods/sendMessage/#kotlin.String/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-methods/send-message.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatViewAnimator///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-view-animator/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatViewAnimator/animLength/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-view-animator/anim-length.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatViewAnimator/onAnimate/#android.view.View#kotlin.Float/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-view-animator/on-animate.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatViewAnimator/onAnimationFinished/#android.view.View/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-view-animator/on-animation-finished.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/DGChatViewAnimator/onAnimationStarted/#android.view.View/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-d-g-chat-view-animator/on-animation-started.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/IDGChatWidgetListener///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-i-d-g-chat-widget-listener/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/IDGChatWidgetListener/onCSATPopoverCloseClicked/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-i-d-g-chat-widget-listener/on-c-s-a-t-popover-close-clicked.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/IDGChatWidgetListener/onChatEndClick/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-i-d-g-chat-widget-listener/on-chat-end-click.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/IDGChatWidgetListener/onChatLauncherClick/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-i-d-g-chat-widget-listener/on-chat-launcher-click.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/IDGChatWidgetListener/onChatMinimizeClick/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-i-d-g-chat-widget-listener/on-chat-minimize-click.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/IDGChatWidgetListener/onChatProactiveButtonClick/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-i-d-g-chat-widget-listener/on-chat-proactive-button-click.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/PageProgressListener///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-page-progress-listener/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/PageProgressListener/onPageFinished/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-page-progress-listener/on-page-finished.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.interactions/PageProgressListener/onPageStarted/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.interactions/-page-progress-listener/on-page-started.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react////PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule.Companion///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/-companion/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule.Companion/initDgChatSdkModule/#android.app.Activity/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/-companion/init-dg-chat-sdk-module.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/DGChatSdkModule/#com.facebook.react.bridge.ReactApplicationContext/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/-d-g-chat-sdk-module.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/getName/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/get-name.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/initProactiveButtons/#com.facebook.react.bridge.ReadableArray#com.facebook.react.bridge.ReadableArray/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/init-proactive-buttons.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/launchWidget/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/launch-widget.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/sendMessage/#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/send-message.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/showDGChatView/#kotlin.String#kotlin.String#kotlin.String#kotlin.Boolean?#kotlin.String?#kotlin.String?#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/show-d-g-chat-view.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/showToast/#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/show-toast.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkPackage///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-package/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkPackage/DGChatSdkPackage/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-package/-d-g-chat-sdk-package.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkPackage/createJSModules/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-package/create-j-s-modules.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkPackage/createNativeModules/#com.facebook.react.bridge.ReactApplicationContext/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-package/create-native-modules.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkPackage/createViewManagers/#com.facebook.react.bridge.ReactApplicationContext?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-package/create-view-managers.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui.compose////PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui.compose/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui.compose//DGChatView/#androidx.compose.ui.Modifier#kotlin.Boolean#com.digitalgenius.chatwidgetsdk.interactions.PageProgressListener?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui.compose/-d-g-chat-view.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui.compose//hideDGChatView/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui.compose/hide-d-g-chat-view.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui.compose//showDGChatView/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui.compose/show-d-g-chat-view.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui.compose//showDGChatViewWith/#com.digitalgenius.chatwidgetsdk.interactions.DGChatViewAnimator/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui.compose/show-d-g-chat-view-with.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui////PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/DGChatView/#android.content.Context#android.util.AttributeSet?#kotlin.Int/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/-d-g-chat-view.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/hide/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/hide.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/onInterceptTouchEvent/#android.view.MotionEvent?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/on-intercept-touch-event.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/setProgressListener/#com.digitalgenius.chatwidgetsdk.interactions.PageProgressListener?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/set-progress-listener.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/setProgressVisibility/#kotlin.Boolean/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/set-progress-visibility.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/show/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/show.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/show/#com.digitalgenius.chatwidgetsdk.interactions.DGChatViewAnimator/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/show.html
+$dokka.location:com.digitalgenius.chatwidgetsdk////PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk/DGChatSdk///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk/-d-g-chat-sdk/index.html
+$dokka.location:com.digitalgenius.chatwidgetsdk/DGChatSdk/init/#kotlin.String#kotlin.String#kotlin.String#kotlin.Boolean#com.digitalgenius.chatwidgetsdk.interactions.IDGChatWidgetListener?#kotlin.String?#kotlin.String?#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk/-d-g-chat-sdk/init.html
+com.digitalgenius.chatwidgetsdk
+com.digitalgenius.chatwidgetsdk.ext
+com.digitalgenius.chatwidgetsdk.interactions
+com.digitalgenius.chatwidgetsdk.react
+com.digitalgenius.chatwidgetsdk.ui
+com.digitalgenius.chatwidgetsdk.ui.compose
+
