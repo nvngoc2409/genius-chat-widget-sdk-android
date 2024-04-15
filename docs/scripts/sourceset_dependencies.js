@@ -1,0 +1,1 @@
+sourceset_dependencies='{":chatwidgetsdk:dokkaHtml/androidTestRelease":[],":chatwidgetsdk:dokkaHtml/debug":[],":chatwidgetsdk:dokkaHtml/main":[],":chatwidgetsdk:dokkaHtml/release":[],":chatwidgetsdk:dokkaHtml/testFixtures":[],":chatwidgetsdk:dokkaHtml/testFixturesDebug":[],":chatwidgetsdk:dokkaHtml/testFixturesRelease":[]}'
