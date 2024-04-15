@@ -6,7 +6,7 @@ Android SDK for DigitalGenius Chat.
 
 ## Overview
 This SDK enables the DigitalGenius Chat Widget to be embedded anywhere inside an Android app.
-The SDK requires minimal setup. Please see the `PublicDemoApp.zip` for an example.
+The SDK requires minimal setup.
 
 A DigitalGenius Customer Success Manager will provide you with a custom `widgetId`, `env` and `version` before getting started.
 Please see the `Integrating SDK to your project` section for details on how to integrate the following settings into an Android app using the SDK.
