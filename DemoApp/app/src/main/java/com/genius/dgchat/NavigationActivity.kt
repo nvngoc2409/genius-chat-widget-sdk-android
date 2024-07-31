@@ -53,8 +53,8 @@ class NavigationActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (dgChatView.visibility == View.VISIBLE && dgChatView.isChatViewMaximized) {
-                    dgChatView.hide()
-//                    methods.minimizeWidget()
+//                    dgChatView.hide()
+                    methods.minimizeWidget()
                     return
                 }
 
@@ -104,7 +104,6 @@ class NavigationActivity : AppCompatActivity() {
         findViewById<Button>(R.id.navigation_back).isEnabled = screenNumber > 0
     }
 }
-
 
 class NavigationFragment : Fragment() {
     private val rnd = Random(System.currentTimeMillis())

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentActivity
 import com.digitalgenius.chatwidgetsdk.DGChatSdk
 import com.digitalgenius.chatwidgetsdk.interactions.IDGChatWidgetListener
 
@@ -27,13 +28,16 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.navigation_btn).setOnClickListener {
             startActivity(Intent(this, NavigationActivity::class.java))
         }
+        findViewById<Button>(R.id.fragment_btn).setOnClickListener {
+            startActivity(Intent(this, FragmentActivityExample::class.java))
+        }
     }
 
     private fun initDGChatSdk() {
         DGChatSdk.init(
             "b2813082-fe22-40aa-99f9-91f0b974efaa",
             "eu",
-            "2.2.0",
+            "2.3.1",
             true,
             callbacks = object : IDGChatWidgetListener {
                 override fun onChatMinimizeClick() {

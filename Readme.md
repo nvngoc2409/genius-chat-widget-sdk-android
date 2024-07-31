@@ -106,6 +106,8 @@ And finally, just call ``showDGChatViewWith(animator: DGChatViewAnimator)`` to p
 
 Methods ``showDGChatViewWith(animator: DGChatViewAnimator)`` and ``showDGChatView()`` returned ``DGChatMethods`` which can be used to performed programmatically widget actions
 
+Best user experience with DGChatSDK achieved when using maximum possible view size e.g. - full size View or Window itself.
+
 ## Sample project
 
 The interaction model and example usage can be found in Demo project. Refer to the `MainActivity.kt` file.

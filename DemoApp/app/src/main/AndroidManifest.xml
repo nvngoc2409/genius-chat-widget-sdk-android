@@ -33,6 +33,9 @@
         <activity
             android:name=".NavigationActivity"
             android:exported="false" />
+        <activity
+            android:name=".FragmentActivityExample"
+            android:exported="false" />
     </application>
 
 </manifest>
