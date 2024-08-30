@@ -238,7 +238,7 @@ There are two methods to display your chat in full-screen mode:
 
 Screenshot:
 
-![Screenshot](Screenshot.png)
+![Screenshot](FullScreen1.png)
 
 ## Full Screen with Bottom Navigation Tabs
 If you wish to implement full-screen mode with bottom navigation tabs, follow these steps:
@@ -263,7 +263,7 @@ If you wish to implement full-screen mode with bottom navigation tabs, follow th
 
 Screenshot:
 
-![Screenshot](Screenshot2.png)
+![Screenshot](FullScreen2.png)
 
 
 ## Sample project
