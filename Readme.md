@@ -6,7 +6,7 @@ Android SDK for DigitalGenius Chat.
 
 ## Overview
 This SDK enables the DigitalGenius Chat Widget to be embedded anywhere inside an Android app.
-The SDK requires minimal setup.
+The SDK requires minimal setup. Please see the `PublicDemoApp.zip` for an example.
 
 A DigitalGenius Customer Success Manager will provide you with a custom `widgetId`, `env` and `version` before getting started.
 Please see the `Integrating SDK to your project` section for details on how to integrate the following settings into an Android app using the SDK.
@@ -105,8 +105,6 @@ class MainActivity : ComponentActivity() {
 And finally, just call ``showDGChatViewWith(animator: DGChatViewAnimator)`` to present a chat button on top of specified Activity with animation or ``showDGChatView()`` without.
 
 Methods ``showDGChatViewWith(animator: DGChatViewAnimator)`` and ``showDGChatView()`` returned ``DGChatMethods`` which can be used to performed programmatically widget actions
-
-Best user experience with DGChatSDK achieved when using maximum possible view size e.g. - full size View or Window itself.
 
 ## Sample project
 
@@ -211,45 +209,49 @@ useEffect(() => {
        )
 ...
 ```
-## Full screen support
-There are two ways to display your Genius chat with full screens:
-1. Custom your activity styles:
-     ```xml
+# Full screen support
+There are two methods to display your chat in full-screen mode:
+### 1. Customize Activity Styles via xml config
+
+```xml
     <resources>
        <style name="Theme.MyApplication" parent="android:Theme.Material.Light.NoActionBar">
            <item name="android:windowFullscreen">true</item>
        </style>
     </resources>
-    ```
-2. Set full screen programmatically:
+```
+### 2. Set Full Screen Programmatically
 
-    ```Kotlin
+```Kotlin
     window.setFlags(
        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
        WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
     )
-   ```
-   Then hide status bar:
-
-    ```Kotlin
+```
+   After setting the flags, you can also hide the status bar using the following code:
+   
+```Kotlin
     WindowCompat.getInsetsController(window, window.decorView).apply {
         hide(WindowInsetsCompat.Type.systemBars())
     }
-    ```
+```
 
 Screenshot:
 
 ![Screenshot](Screenshot.png)
 
-Full screen with bottom navigation tabs:
-1. Enable draw over system bar in your activity:
-   ```Kotlin
+## Full Screen with Bottom Navigation Tabs
+If you wish to implement full-screen mode with bottom navigation tabs, follow these steps:
+
+### 1. Enable drawing over the system bar in your activity
+
+```Kotlin
     enableEdgeToEdge()
-    ```
+```
 
-2. Hide status bar when Genius Chat tab is shown:
+### 2. Hide the status bar when the Genius Chat tab is displayed
 
-   ```Kotlin
+```Kotlin
    WindowCompat.getInsetsController(activity.window, activity.window.decorView).apply {
         if (selectedItem == 2) {
             hide(WindowInsetsCompat.Type.statusBars())
@@ -257,11 +259,12 @@ Full screen with bottom navigation tabs:
             show(WindowInsetsCompat.Type.statusBars())
         }
    }
-   ```
+```
 
 Screenshot:
 
 ![Screenshot](Screenshot2.png)
+
 
 ## Sample project
 The interaction model and example usage can be found in Demo project.
