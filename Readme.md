@@ -211,6 +211,57 @@ useEffect(() => {
        )
 ...
 ```
+## Full screen support
+There are two ways to display your Genius chat with full screens:
+1. Custom your activity styles:
+     ```xml
+    <resources>
+       <style name="Theme.MyApplication" parent="android:Theme.Material.Light.NoActionBar">
+           <item name="android:windowFullscreen">true</item>
+       </style>
+    </resources>
+    ```
+2. Set full screen programmatically:
+
+    ```Kotlin
+    window.setFlags(
+       WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+       WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+    )
+   ```
+   Then hide status bar:
+
+    ```Kotlin
+    WindowCompat.getInsetsController(window, window.decorView).apply {
+        hide(WindowInsetsCompat.Type.systemBars())
+    }
+    ```
+
+Screenshot:
+
+![Screenshot](Screenshot.png)
+
+Full screen with bottom navigation tabs:
+1. Enable draw over system bar in your activity:
+   ```Kotlin
+    enableEdgeToEdge()
+    ```
+
+2. Hide status bar when Genius Chat tab is shown:
+
+   ```Kotlin
+   WindowCompat.getInsetsController(activity.window, activity.window.decorView).apply {
+        if (selectedItem == 2) {
+            hide(WindowInsetsCompat.Type.statusBars())
+        } else {
+            show(WindowInsetsCompat.Type.statusBars())
+        }
+   }
+   ```
+
+Screenshot:
+
+![Screenshot](Screenshot2.png)
 
 ## Sample project
 The interaction model and example usage can be found in Demo project.
