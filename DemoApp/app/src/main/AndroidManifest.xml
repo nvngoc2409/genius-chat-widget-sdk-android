@@ -28,6 +28,9 @@
             android:name=".StraightActivity"
             android:exported="false" />
         <activity
+            android:name=".DirectActivity"
+            android:exported="false" />
+        <activity
             android:name=".EmbeddedActivity"
             android:exported="false" />
         <activity

@@ -76,6 +76,14 @@ class MainActivity : ComponentActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+
+                override fun onChatInitialised() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Chat callback -> onChatInitialised",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
             },
             metadata = """
                 metadata: {
