@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.straight_btn).setOnClickListener {
             startActivity(Intent(this, StraightActivity::class.java))
         }
+        findViewById<Button>(R.id.direct_btn).setOnClickListener {
+            startActivity(Intent(this, DirectActivity::class.java))
+        }
         findViewById<Button>(R.id.embedded_btn).setOnClickListener {
             startActivity(Intent(this, EmbeddedActivity::class.java))
         }
@@ -78,6 +81,10 @@ class MainActivity : AppCompatActivity() {
                         "User callback -> onChatProactiveButtonClick",
                         Toast.LENGTH_LONG
                     ).show()
+                }
+
+                override fun onChatInitialised() {
+
                 }
             }
         )

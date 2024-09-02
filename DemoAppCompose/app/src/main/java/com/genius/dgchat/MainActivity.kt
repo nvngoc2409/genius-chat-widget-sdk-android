@@ -90,6 +90,10 @@ class MainActivity : ComponentActivity() {
                         Toast.LENGTH_LONG
                     ).show()
                 }
+
+                override fun onChatInitialised() {
+
+                }
             }
         )
         attachDGChatViewToLifecycle()
