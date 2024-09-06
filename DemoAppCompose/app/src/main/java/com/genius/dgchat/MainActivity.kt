@@ -94,7 +94,47 @@ class MainActivity : ComponentActivity() {
                 override fun onChatInitialised() {
 
                 }
-            }
+            },
+
+            configs = mapOf(
+                Pair(
+                    "proactiveButtonsSettings", mapOf(
+                        Pair("isEnabled", true),
+                        Pair("questions", arrayOf("A", "B", "C")),
+                        Pair("answers", arrayOf("1", "2", "3")),
+                    )
+                ),
+                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
+                Pair(
+                    "widgetPosition",
+                    mapOf(
+                        Pair(
+                            "mobile", mapOf(
+                                Pair(
+                                    "launcher", mapOf(
+                                        Pair("bottom", "10px"),
+                                        Pair("right", "10px")
+                                    )
+                                ),
+                                Pair(
+                                    "proactive", mapOf(
+                                        Pair("bottom", "90px"),
+                                        Pair("right", "20px")
+                                    )
+                                ),
+                                Pair(
+                                    "dialog", mapOf(
+                                        Pair("top", "0px"),
+                                        Pair("right", "0px"),
+                                        Pair("bottom", "0px"),
+                                        Pair("left", "0px"),
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+            ),
         )
         attachDGChatViewToLifecycle()
 

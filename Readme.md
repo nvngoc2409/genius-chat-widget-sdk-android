@@ -274,5 +274,51 @@ Screenshot:
 ![Screenshot](Screenshot2.png)
 
 
+## Customise your chat widget
+You can use config to customise your chat widget style. Eg: floating button position, proactive buttons
+
+```Kotlin
+   configs = mapOf(
+                Pair(
+                    "proactiveButtonsSettings", mapOf(
+                        Pair("isEnabled", true),
+                        Pair("questions", arrayOf("A", "B", "C")),
+                        Pair("answers", arrayOf("1", "2", "3")),
+                    )
+                ),
+                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
+                Pair(
+                    "widgetPosition",
+                    mapOf(
+                        Pair(
+                            "mobile", mapOf(
+                                Pair(
+                                    "launcher", mapOf(
+                                        Pair("bottom", "10px"),
+                                        Pair("right", "10px")
+                                    )
+                                ),
+                                Pair(
+                                    "proactive", mapOf(
+                                        Pair("bottom", "90px"),
+                                        Pair("right", "20px")
+                                    )
+                                ),
+                                Pair(
+                                    "dialog", mapOf(
+                                        Pair("top", "0px"),
+                                        Pair("right", "0px"),
+                                        Pair("bottom", "0px"),
+                                        Pair("left", "0px"),
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+            )
+
+```
+
 ## Sample project
 The interaction model and example usage can be found in Demo project.
