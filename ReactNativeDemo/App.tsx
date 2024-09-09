@@ -98,7 +98,6 @@ useEffect(() => {
     DGChatModule.showDGChatView(
 	"f08c2308-b8f9-4390-af00-da1724862787", 
 	"https://flow-server.eu.dgdeepai.com", 
-	"1.1.0", 
 	true, 
 	"metadata: { \"currentPage\": \"some-random-string\", \"currentPageTitle\": \"another-random-string\"}"
     );

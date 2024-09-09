@@ -32,7 +32,6 @@ class MainActivity : ComponentActivity() {
         DGChatSdk.init(
             widgetId = "your_widget_id",
             env = "your_env",
-            version = "your_version",
             useCache = true,
             crmPlatform = "your_crm", // optional
             crmVersion = "your_crm_version", // optional
@@ -201,7 +200,6 @@ useEffect(() => {
     DGChatModule.showDGChatView(
        "your_widget_id",
        "your_env",
-       "your_version",
        true, 
        crmPlatform, // optional
        crmVersion, // optional

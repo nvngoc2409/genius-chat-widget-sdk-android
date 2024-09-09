@@ -46,7 +46,6 @@ class MainActivity : ComponentActivity() {
         DGChatSdk.init(
             "f0c07546-af4c-4963-9e23-3e9343eaf13b",
             "dev.us",
-            "2.1.2",
             true,
             crmPlatform = "sunco",
             crmVersion = "1.0.0",
