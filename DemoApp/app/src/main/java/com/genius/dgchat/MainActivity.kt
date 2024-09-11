@@ -81,6 +81,10 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 }
 
+                override fun onWidgetEmbedded() {
+
+                }
+
                 override fun onChatInitialised() {
 
                 }

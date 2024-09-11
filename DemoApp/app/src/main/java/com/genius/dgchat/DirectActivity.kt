@@ -15,6 +15,9 @@ class DirectActivity: AppCompatActivity() {
         val dgChatView = findViewById<DGChatView>(R.id.straight_dgchatview)
         dgChatView.chatWidgetListener = object : IDGChatWidgetListener{
             override fun onChatInitialised() {
+            }
+
+            override fun onWidgetEmbedded() {
                 // Must be run on main thread
                 runOnUiThread{
                     methods?.launchWidget()

@@ -93,6 +93,10 @@ class MainActivity : ComponentActivity() {
                 override fun onChatInitialised() {
 
                 }
+
+                override fun onWidgetEmbedded() {
+
+                }
             },
 
             configs = mapOf(
