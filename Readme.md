@@ -32,7 +32,10 @@ class MainActivity : ComponentActivity() {
         DGChatSdk.init(
             widgetId = "your_widget_id",
             env = "your_env",
-            version = "your_version",
+            configs = mapOf(
+                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
+		...
+            )
             useCache = true,
             crmPlatform = "your_crm", // optional
             crmVersion = "your_crm_version", // optional
