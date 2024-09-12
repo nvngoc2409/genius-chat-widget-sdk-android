@@ -114,6 +114,8 @@ And finally, just call ``showDGChatViewWith(animator: DGChatViewAnimator)`` to p
 
 Methods ``showDGChatViewWith(animator: DGChatViewAnimator)`` and ``showDGChatView()`` returned ``DGChatMethods`` which can be used to performed programmatically widget actions
 
+See [full methods list](https://docs.digitalgenius.com/docs/methods) for more details.
+
 ## Sample project
 
 The interaction model and example usage can be found in Demo project. Refer to the `MainActivity.kt` file.
@@ -217,6 +219,7 @@ useEffect(() => {
        )
 ...
 ```
+
 # Full screen support
 There are two methods to display your chat in full-screen mode:
 ### 1. Customize Activity Styles via xml config
