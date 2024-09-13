@@ -32,6 +32,10 @@ class MainActivity : ComponentActivity() {
         DGChatSdk.init(
             widgetId = "your_widget_id",
             env = "your_env",
+            configs = mapOf(
+                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
+		...
+            )
             useCache = true,
             crmPlatform = "your_crm", // optional
             crmVersion = "your_crm_version", // optional
@@ -112,6 +116,8 @@ class MainActivity : ComponentActivity() {
 And finally, just call ``showDGChatViewWith(animator: DGChatViewAnimator)`` to present a chat button on top of specified Activity with animation or ``showDGChatView()`` without.
 
 Methods ``showDGChatViewWith(animator: DGChatViewAnimator)`` and ``showDGChatView()`` returned ``DGChatMethods`` which can be used to performed programmatically widget actions
+
+See [full methods list](https://docs.digitalgenius.com/docs/methods) for more details.
 
 ## Sample project
 
@@ -215,6 +221,7 @@ useEffect(() => {
        )
 ...
 ```
+
 # Full screen support
 There are two methods to display your chat in full-screen mode:
 ### 1. Customize Activity Styles via xml config
