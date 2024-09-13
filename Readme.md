@@ -206,7 +206,6 @@ useEffect(() => {
     DGChatModule.showDGChatView(
        "your_widget_id",
        "your_env",
-       "your_version",
        true, 
        crmPlatform, // optional
        crmVersion, // optional

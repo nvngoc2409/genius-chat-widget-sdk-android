@@ -37,9 +37,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initDGChatSdk() {
         DGChatSdk.init(
-            "b2813082-fe22-40aa-99f9-91f0b974efaa",
-            "eu",
-            "2.3.1",
+            "f0c07546-af4c-4963-9e23-3e9343eaf13b",
+            "dev.us",
             true,
             callbacks = object : IDGChatWidgetListener {
                 override fun onChatMinimizeClick() {
@@ -80,6 +79,10 @@ class MainActivity : AppCompatActivity() {
                         "User callback -> onChatProactiveButtonClick",
                         Toast.LENGTH_LONG
                     ).show()
+                }
+
+                override fun onWidgetEmbedded() {
+
                 }
 
                 override fun onChatInitialised() {
