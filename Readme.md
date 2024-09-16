@@ -40,6 +40,14 @@ class MainActivity : ComponentActivity() {
             crmPlatform = "your_crm", // optional
             crmVersion = "your_crm_version", // optional
             callbacks = object : IDGChatWidgetListener {
+                override fun onWidgetEmbedded() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "User callback -> onWidgetEmbedded",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
                 override fun onChatMinimizeClick() {
                     Toast.makeText(
                         this@MainActivity,
@@ -112,7 +120,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 ```
-⚠️ It is highly important to provide ``version`` as a [Semantic versioning three-part version number](https://en.wikipedia.org/wiki/Software_versioning). Otherwise, you'll encounter runtime error.
+
 And finally, just call ``showDGChatViewWith(animator: DGChatViewAnimator)`` to present a chat button on top of specified Activity with animation or ``showDGChatView()`` without.
 
 Methods ``showDGChatViewWith(animator: DGChatViewAnimator)`` and ``showDGChatView()`` returned ``DGChatMethods`` which can be used to performed programmatically widget actions
@@ -176,8 +184,14 @@ const {DGChatModule} = NativeModules;
 ...
 useEffect(() => {
     const eventEmitter = new NativeEventEmitter(NativeModules.DGChatModule);
-    let onChatMinimizeClickEventListener = eventEmitter.addListener('OnChatMinimizeClick', event => {
-      DGChatModule.showToast("OnChatMinimizeClick")
+    let onWidgetEmbeddedEventListener = eventEmitter.addListener('onWidgetEmbedded', event => {
+      DGChatModule.showToast("onWidgetEmbedded")
+    });
+    let onChatInitialisedEventListener = eventEmitter.addListener('onChatInitialised', event => {
+      DGChatModule.showToast("onChatInitialised")
+    });
+    let onChatMinimizeClickEventListener = eventEmitter.addListener('onChatMinimizeClick', event => {
+      DGChatModule.showToast("onChatMinimizeClick")
     });
     let onChatEndClickEventListener = eventEmitter.addListener('onChatEndClick', event => {
       DGChatModule.showToast("onChatEndClick")
@@ -194,6 +208,8 @@ useEffect(() => {
 
 
     return () => {
+      onWidgetEmbeddedEventListener.remove(); 
+      onChatInitialisedEventListener.remove(); 
       onChatMinimizeClickEventListener.remove(); 
 	  onChatEndClickEventListener.remove(); 
 	  onChatLauncherClickEventListener.remove(); 
