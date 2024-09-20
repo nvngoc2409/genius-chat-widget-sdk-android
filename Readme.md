@@ -1,6 +1,10 @@
-# Module chatwidgetsdk
-
 # ``DGChatSDK``
+
+<div align="center">
+   <img width="600px" src="./docs/images/logo-dark-dg.svg" alt="Logo">
+</div>
+
+<!--![DigitalGeniusLogo](logo-dark.svg)-->
 
 Android SDK for DigitalGenius Chat.
 
@@ -23,7 +27,94 @@ Please see the `Integrating SDK to your project` section for details on how to i
 3. Put `DGChatSDK.aar` into your `project/module/libs` folder.
 4. Click `Sync Project with Gradle files` in Android Studio
 
-## Basic usage example
+
+## Basic usage
+1. Add ``DGChatView`` into your layout
+```xml
+<com.digitalgenius.chatwidgetsdk.ui.DGChatView
+        android:id="@+id/dgchatview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+```
+
+2. Init the SDK
+```Kotlin
+        DGChatSdk.init(
+            widgetId = "your_widget_id",
+            env = "your_env",
+            useCache = true,
+	    ), // optional
+            crmPlatform = "your_crm", // optional
+            crmVersion = "your_crm_version", // optional
+            callbacks = object : IDGChatWidgetListener {
+                override fun onChatMinimizeClick() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "User callback -> onChatMinimizeClick",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+                override fun onChatEndClick() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "User callback -> onChatEndClick",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+                override fun onChatLauncherClick() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "User callback -> onChatLauncherClick",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+                override fun onChatProactiveButtonClick() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "User callback -> onChatProactiveButtonClick",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+                override fun onCSATPopoverCloseClicked() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "User callback -> onCSATPopoverCloseClicked",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+
+                override fun onChatInitialised() {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Chat callback -> onChatInitialised",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            },
+            metadata = """
+                metadata: {
+                    "currentPage": "some-random-string",
+                    "currentPageTitle": "another-random-string"
+                }
+            """.trimIndent()
+        )
+```
+3. Show chat widget
+```Kotlin
+	dgChatView.show()
+```
+
+And finally, just call ``show(animator: DGChatViewAnimator)`` to present a chat button on top of specified Activity with animation or ``show()`` if you dont wish to have animation.
+
+Methods ``show(animator: DGChatViewAnimator)`` and ``show()`` returned ``DGChatMethods`` which can be used to performed programmatically widget actions
+
+> 🧐 Best user experience with DGChatSDK achieved when using maximum possible view size e.g. - full size UIView or Window itself.
+
+## Jetpack compose
 
 ```Kotlin
 class MainActivity : ComponentActivity() {
@@ -32,22 +123,19 @@ class MainActivity : ComponentActivity() {
         DGChatSdk.init(
             widgetId = "your_widget_id",
             env = "your_env",
-            configs = mapOf(
-                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
-		...
-            )
             useCache = true,
+            configs = mapOf(
+                Pair(
+                    "proactiveButtonsSettings", mapOf(
+                        Pair("isEnabled", true),
+                        Pair("questions", arrayOf("A", "B", "C")),
+                        Pair("answers", arrayOf("1", "2", "3")),
+                    )
+                )
+	    ), // optional
             crmPlatform = "your_crm", // optional
             crmVersion = "your_crm_version", // optional
             callbacks = object : IDGChatWidgetListener {
-                override fun onWidgetEmbedded() {
-                    Toast.makeText(
-                        this@MainActivity,
-                        "User callback -> onWidgetEmbedded",
-                        Toast.LENGTH_LONG
-                    ).show()
-                }
-
                 override fun onChatMinimizeClick() {
                     Toast.makeText(
                         this@MainActivity,
@@ -119,18 +207,225 @@ class MainActivity : ComponentActivity() {
        )
     }
 }
+
+## Additional custom configs
+You can use config to customise your chat widget style. Eg: floating button position, proactive buttons
+
+```Kotlin
+   configs = mapOf(
+                Pair(
+                    "proactiveButtonsSettings", mapOf(
+                        Pair("isEnabled", true),
+                        Pair("questions", arrayOf("A", "B", "C")),
+                        Pair("answers", arrayOf("1", "2", "3")),
+                    )
+                ),
+                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
+                Pair(
+                    "widgetPosition",
+                    mapOf(
+                        Pair(
+                            "mobile", mapOf(
+                                Pair(
+                                    "launcher", mapOf(
+                                        Pair("bottom", "10px"),
+                                        Pair("right", "10px")
+                                    )
+                                ),
+                                Pair(
+                                    "proactive", mapOf(
+                                        Pair("bottom", "90px"),
+                                        Pair("right", "20px")
+                                    )
+                                ),
+                                Pair(
+                                    "dialog", mapOf(
+                                        Pair("top", "0px"),
+                                        Pair("right", "0px"),
+                                        Pair("bottom", "0px"),
+                                        Pair("left", "0px"),
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+            )
+
 ```
 
-And finally, just call ``showDGChatViewWith(animator: DGChatViewAnimator)`` to present a chat button on top of specified Activity with animation or ``showDGChatView()`` without.
+## Additional Methods
 
-Methods ``showDGChatViewWith(animator: DGChatViewAnimator)`` and ``showDGChatView()`` returned ``DGChatMethods`` which can be used to performed programmatically widget actions
+You can use a set of additional methods to interact directly with Chat Widget. These methods are lised as a part of ``DGChatMethods`` instance.
+
+The `sendMessage` method allows the customer to programmatically send a message on the user behalf. This method is not available once the user is handed over to a crm:
+
+```Kotlin
+fun sendMessage(message: String)
+```
+
+The sendSystemMessage method allows the customer to programmatically send a message to system. This method is only available after the chat has been embeded:
+
+```Kotlin
+fun sendSystemMessage(payload: String)
+```
+
+The `launchWidget` method allows the customer to programmatically launch the widget:
+
+```Kotlin
+func launchWidget()
+```
+
+The `initProactiveButtons` method allows the customer to programmatically trigger the proactive buttons to display:
+
+```Kotlin
+func initProactiveButtons(questions: List<String>, answers: List<String>)
+```
+
+The `minimizeWidget` method allows customer to minimise an expanded chat UI to the "launcher" state programmatically:
+
+```Kotlin
+func minimizeWidget()
+```
 
 See [full methods list](https://docs.digitalgenius.com/docs/methods) for more details.
+
+## Launch chat from an external element
+
+If you prefer to launch the chat widget from your UI element (eg: An “Chat with us“ button) rather than using the default SDK launcher, follow these steps:
+1. Hide the launcher with this custome config from chat delegate
+You can hide the default launcher button by adding the following configuration inside  ``DGChatSdk.init(configs)``
+```
+var configs = mapOf(Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))))
+```
+
+2. Initialize the Chat SDK
+Initialize the chat SDK by calling the DGChatSdk.init() function. Then adding ``methods.launchWidget()`` inside ``onWidgetEmbedded()`` callbacks. 
+
+4. Manually Launch the Chat Widget
+After the SDK is successfully embedded in your application, you can manually launch the chat widget by calling the ``methods.launchWidget()`` function.
+
+Below is a complete example of how to configure the SDK to manually launch the chat widget
+```Kotlin
+class DirectActivity : AppCompatActivity() {
+    var methods: DGChatMethods? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_straight)
+        DGChatSdk.init(
+            "your_widget_id",
+            "your_env",
+            true,
+            configs = mapOf(
+                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
+            )
+        )
+
+        val dgChatView = findViewById<DGChatView>(R.id.straight_dgchatview)
+        dgChatView.chatWidgetListener = object : IDGChatWidgetListener {
+            override fun onChatInitialised() {
+            }
+
+            override fun onWidgetEmbedded() {
+                // Must be run on main thread
+                runOnUiThread {
+                    methods?.launchWidget()
+                }
+            }
+
+            override fun onCSATPopoverCloseClicked() {
+            }
+
+            override fun onChatEndClick() {
+            }
+
+            override fun onChatLauncherClick() {
+            }
+
+            override fun onChatMinimizeClick() {
+            }
+
+            override fun onChatProactiveButtonClick() {
+            }
+
+        }
+
+        methods = dgChatView.show()
+    }
+}
+```
+
+# Full screen support
+There are two methods to display your chat in full-screen mode:
+### 1. Customize Activity Styles via xml config
+
+```xml
+    <resources>
+       <style name="Theme.MyApplication" parent="android:Theme.Material.Light.NoActionBar">
+           <item name="android:windowFullscreen">true</item>
+       </style>
+    </resources>
+```
+### 2. Set Full Screen Programmatically
+
+```Kotlin
+    window.setFlags(
+       WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+       WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+    )
+```
+   After setting the flags, you can also hide the status bar using the following code:
+   
+```Kotlin
+    WindowCompat.getInsetsController(window, window.decorView).apply {
+        hide(WindowInsetsCompat.Type.systemBars())
+    }
+```
+
+Screenshot:
+
+![Screenshot](Screenshot.png)
+
+## Full Screen with Bottom Navigation Tabs
+If you wish to implement full-screen mode with bottom navigation tabs, follow these steps:
+
+### 1. Enable drawing over the system bar in your activity
+
+```Kotlin
+    enableEdgeToEdge()
+```
+
+### 2. Hide the status bar when the Genius Chat tab is displayed
+
+```Kotlin
+   WindowCompat.getInsetsController(activity.window, activity.window.decorView).apply {
+        if (selectedItem == 2) {
+            hide(WindowInsetsCompat.Type.statusBars())
+        } else {
+            show(WindowInsetsCompat.Type.statusBars())
+        }
+   }
+```
+
+Screenshot:
+
+![Screenshot](Screenshot2.png)
 
 ## Sample project
 
 The interaction model and example usage can be found in Demo project. Refer to the `MainActivity.kt` file.
 
+Project UI root activity is MainActivity which contains buttons reference to other activities:
+
+`StraightActivity.kt` - can be useful example for those cases, when you need to present Chat Widget during view presentation process.
+
+`DirectActivity.kt` - launch the chat up on openning this screen. 
+
+`EmbeddedActivity.kt` - demonstrates a step-by-step call of DGChatSDK from user-defined UI.
+
+`NavigationActivity.kt` - provides an example of handling fragment navigation with chat widget. 
+
+`FragmentActivityExample.kt` - gives an example of adding chat widget to a Fragment. 
 
 
 # React-native
@@ -238,108 +533,4 @@ useEffect(() => {
 ...
 ```
 
-# Full screen support
-There are two methods to display your chat in full-screen mode:
-### 1. Customize Activity Styles via xml config
-
-```xml
-    <resources>
-       <style name="Theme.MyApplication" parent="android:Theme.Material.Light.NoActionBar">
-           <item name="android:windowFullscreen">true</item>
-       </style>
-    </resources>
-```
-### 2. Set Full Screen Programmatically
-
-```Kotlin
-    window.setFlags(
-       WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-       WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-    )
-```
-   After setting the flags, you can also hide the status bar using the following code:
-   
-```Kotlin
-    WindowCompat.getInsetsController(window, window.decorView).apply {
-        hide(WindowInsetsCompat.Type.systemBars())
-    }
-```
-
-Screenshot:
-
-![Screenshot](Screenshot.png)
-
-## Full Screen with Bottom Navigation Tabs
-If you wish to implement full-screen mode with bottom navigation tabs, follow these steps:
-
-### 1. Enable drawing over the system bar in your activity
-
-```Kotlin
-    enableEdgeToEdge()
-```
-
-### 2. Hide the status bar when the Genius Chat tab is displayed
-
-```Kotlin
-   WindowCompat.getInsetsController(activity.window, activity.window.decorView).apply {
-        if (selectedItem == 2) {
-            hide(WindowInsetsCompat.Type.statusBars())
-        } else {
-            show(WindowInsetsCompat.Type.statusBars())
-        }
-   }
-```
-
-Screenshot:
-
-![Screenshot](Screenshot2.png)
-
-
-## Customise your chat widget
-You can use config to customise your chat widget style. Eg: floating button position, proactive buttons
-
-```Kotlin
-   configs = mapOf(
-                Pair(
-                    "proactiveButtonsSettings", mapOf(
-                        Pair("isEnabled", true),
-                        Pair("questions", arrayOf("A", "B", "C")),
-                        Pair("answers", arrayOf("1", "2", "3")),
-                    )
-                ),
-                Pair("generalSettings", mapOf(Pair("isChatLauncherEnabled", true))),
-                Pair(
-                    "widgetPosition",
-                    mapOf(
-                        Pair(
-                            "mobile", mapOf(
-                                Pair(
-                                    "launcher", mapOf(
-                                        Pair("bottom", "10px"),
-                                        Pair("right", "10px")
-                                    )
-                                ),
-                                Pair(
-                                    "proactive", mapOf(
-                                        Pair("bottom", "90px"),
-                                        Pair("right", "20px")
-                                    )
-                                ),
-                                Pair(
-                                    "dialog", mapOf(
-                                        Pair("top", "0px"),
-                                        Pair("right", "0px"),
-                                        Pair("bottom", "0px"),
-                                        Pair("left", "0px"),
-                                    )
-                                )
-                            )
-                        )
-                    )
-                ),
-            )
-
-```
-
-## Sample project
-The interaction model and example usage can be found in Demo project.
+For more detailed example, please refer to `App.tsx`.
