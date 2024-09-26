@@ -43,7 +43,7 @@ $dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/initProact
 $dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/launchWidget/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/launch-widget.html
 $dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/sendMessage/#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/send-message.html
 $dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/sendSystemMessage/#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/send-system-message.html
-$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/showDGChatView/#kotlin.String#kotlin.String#kotlin.Boolean?#kotlin.String?#kotlin.String?#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/show-d-g-chat-view.html
+$dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/showDGChatView/#kotlin.String#kotlin.String#kotlin.Boolean?#kotlin.String?#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/show-d-g-chat-view.html
 $dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkModule/showToast/#kotlin.String?/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-module/show-toast.html
 $dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkPackage///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-package/index.html
 $dokka.location:com.digitalgenius.chatwidgetsdk.react/DGChatSdkPackage/DGChatSdkPackage/#/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.react/-d-g-chat-sdk-package/-d-g-chat-sdk-package.html
@@ -68,7 +68,7 @@ $dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/show/#/PointingToD
 $dokka.location:com.digitalgenius.chatwidgetsdk.ui/DGChatView/show/#com.digitalgenius.chatwidgetsdk.interactions.DGChatViewAnimator/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk.ui/-d-g-chat-view/show.html
 $dokka.location:com.digitalgenius.chatwidgetsdk////PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk/index.html
 $dokka.location:com.digitalgenius.chatwidgetsdk/DGChatSdk///PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk/-d-g-chat-sdk/index.html
-$dokka.location:com.digitalgenius.chatwidgetsdk/DGChatSdk/init/#kotlin.String#kotlin.String#kotlin.Boolean#com.digitalgenius.chatwidgetsdk.interactions.IDGChatWidgetListener?#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.collections.Map[kotlin.String,kotlin.Any]/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk/-d-g-chat-sdk/init.html
+$dokka.location:com.digitalgenius.chatwidgetsdk/DGChatSdk/init/#kotlin.String#kotlin.String#kotlin.Boolean#com.digitalgenius.chatwidgetsdk.interactions.IDGChatWidgetListener?#kotlin.String?#kotlin.String?#kotlin.collections.Map[kotlin.String,kotlin.Any]/PointingToDeclaration/chatwidgetsdk/com.digitalgenius.chatwidgetsdk/-d-g-chat-sdk/init.html
 com.digitalgenius.chatwidgetsdk
 com.digitalgenius.chatwidgetsdk.ext
 com.digitalgenius.chatwidgetsdk.interactions
