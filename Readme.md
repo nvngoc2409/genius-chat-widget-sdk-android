@@ -514,7 +514,6 @@ useEffect(() => {
        true, 
        crmPlatform, // optional
        crmVersion, // optional
-       "metadata: { \"currentPage\": \"some-random-string\", \"currentPageTitle\": \"another-random-string\"}"
     );
 ...
 
