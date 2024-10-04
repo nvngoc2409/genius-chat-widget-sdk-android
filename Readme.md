@@ -261,7 +261,7 @@ fun sendMessage(message: String)
 The sendSystemMessage method allows the customer to programmatically send a message to system. This method is only available after the chat has been embeded:
 
 ```Kotlin
-fun sendSystemMessage(payload: String)
+fun sendSystemMessage(payload: Map<String, Any>)
 ```
 
 The `launchWidget` method allows the customer to programmatically launch the widget:
